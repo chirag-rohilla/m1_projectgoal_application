@@ -17,7 +17,7 @@ this matrix calculator is a project that does arithematic calculation
 |LR_03 | matrix subtraction                               | Implemented |
 |LR_04 | matrix multiplication                            | Implemented |
 |LR_05 | Finding det of the matrix                        | pending     |
-|LR_06 | using matrix to solve algebric operation         | Implemented |
+|LR_06 | using matrix to solve algebric operation         | pending     |
 
 # 4W's and 1'H
 ## Who:
