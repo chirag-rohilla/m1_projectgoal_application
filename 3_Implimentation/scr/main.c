@@ -5,6 +5,7 @@
 #include<stdlib.h>
 
 void main_menu (){
+    system("clear||cls");
     printf("                        MATRIX CALCLUTOR                     \n");
     printf(" 1 : TRANSPOSE A MATRIX .                                    \n");
     printf(" 2 : ADDITION OF A MATRIX .                                  \n");
@@ -75,11 +76,12 @@ while(c == 'y' || c == 'Y'){
         scanf("%d",&r1);
         printf("enter the number if coloumn for matrix1 :  ");
         scanf("%d",&c1);
+         m1 = create_matrix(r1,c1);
         printf("Declare the matrix \n enter the number of rows for matrix2  :  ");
         scanf("%d",&r2);
         printf("enter the number if coloumn for matrix2 :  ");
         scanf("%d",&c2);
-        m1 = create_matrix(r1,c1);
+       
         m2 = create_matrix(r2,c2);
         solve = matrix_multi(m1,m2);
         printf("solution matrix :  \n");
