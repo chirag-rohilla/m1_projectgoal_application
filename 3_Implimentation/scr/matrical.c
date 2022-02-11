@@ -1,11 +1,10 @@
 
-
 #include<stdio.h>
 #include"matrical.h"
 
 // creating a matrix
 
-struct matrix creat_matrix(int r, int c){
+struct matrix create_matrix(int r, int c){
     //printf("calling create method");
     struct matrix mat;
     mat.row = r;
