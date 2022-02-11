@@ -67,6 +67,7 @@ while(c == 'y' || c == 'Y'){
         m2 = create_matrix(r1,c1);
         printf("solution matrix :  \n");
         solve = matrix_differnce(m1,m2);
+        print_matrix(solve);
         break ;
 
         case 4:
@@ -76,8 +77,8 @@ while(c == 'y' || c == 'Y'){
         scanf("%d",&r1);
         printf("enter the number if coloumn for matrix1 :  ");
         scanf("%d",&c1);
-         m1 = create_matrix(r1,c1);
-        printf("Declare the matrix \n enter the number of rows for matrix2  :  ");
+        m1 = create_matrix(r1,c1);
+        printf("Declare the matrix2 \n enter the number of rows for matrix2  :  ");
         scanf("%d",&r2);
         printf("enter the number if coloumn for matrix2 :  ");
         scanf("%d",&c2);
