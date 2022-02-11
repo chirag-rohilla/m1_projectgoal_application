@@ -16,11 +16,11 @@ void main_menu (){
 }
 
 int main(){
-int c ;
+char c = 'y' ;
 int r1,r2,c1,c2; 
 struct matrix m1 ,m2 ,solve;
         
-do{
+while(c == 'y' || c == 'Y'){
     main_menu();
     int choice ;
     
@@ -36,7 +36,7 @@ do{
         scanf("%d",&c1);
         m1 = create_matrix(r1,c1);
         solve = Transpose(m1);
-        printf("transposed matrix :  ");
+        printf("transposed matrix :  \n");
         print_matrix(solve);
         break;
 
@@ -96,11 +96,11 @@ do{
         printf(" INVALID INPUT !!!");
         break;
     };
-    system("clear || cls" );
-printf("RETURN TO THE MAIN MENU (Y/N)");
-scanf("%c",&c); 
     
-}while(c == 'y'||c=='Y');                                   
+printf("RETURN TO THE MAIN MENU (Y/N)    ");
+scanf("%s",&c); 
+    
+}                                  
     return 0 ;
 }
 
