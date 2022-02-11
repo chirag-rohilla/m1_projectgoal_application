@@ -34,4 +34,4 @@ In computer graphics, they are used to project a 3-dimensional image onto a 2-di
 Matrix calculus generalizes classical analytical notions such as derivatives and exponentials to higher dimensions. The graphics software uses the concept of a matrix to process linear transformations to render images.
 
 # SWOT Analysis
-![swot](6_images/swot.png)
+![swot](https://github.com/chirag-rohilla/m1_projectgoal_application/blob/main/6_images/swot.png)
