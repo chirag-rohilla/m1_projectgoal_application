@@ -11,7 +11,7 @@ this matrix calculator is a project that does arithematic calculation
 
 ## Lowlevel requirements
 |  ID  |             Discription                          |    status   |
-|------|-------------------------------------------------=|-------------|
+|------|--------------------------------------------------|-------------|
 |LR_01 | Matrix transpose                                 | Implemented |
 |LR_02 | matrix addition                                  | Implemented |
 |LR_03 | matrix subtraction                               | Implemented |
