@@ -35,3 +35,9 @@ Matrix calculus generalizes classical analytical notions such as derivatives and
 
 # SWOT Analysis
 ![swot](https://github.com/chirag-rohilla/m1_projectgoal_application/blob/main/6_images/swot.png)
+
+# BADGES
+
+ https://api.codiga.io/project/31148/score/svg
+
+ https://api.codiga.io/project/31148/score/svg
