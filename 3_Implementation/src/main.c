@@ -1,11 +1,11 @@
 #include"stdio.h"
 #include"matrix.h"
 #include"matrical.h"
-#include<conio.h>
 #include<stdlib.h>
 
 int r1,r2,c1,c2; 
 struct matrix m1 ,m2 ,solve;
+int arr[100];
 
 void main_menu (){
     system("clear||cls");
@@ -25,9 +25,8 @@ void do_sum (){
         scanf("%d",&r1);
         printf("enter the number if coloumn :  ");
         scanf("%d",&c1);
-        m1 = create_matrix(r1,c1);
-        m2 = create_matrix(r1,c1);
-        solve = matrix_sum(m1,m2);
+        create_matrix(r1,c1,&m1);
+        create_matrix(r1,c1,&m2);
         printf("solution matrix :  \n");
         print_matrix(solve);
 }
@@ -38,10 +37,10 @@ void do_diff(){
         scanf("%d",&r1);
         printf("enter the number if coloumn :  ");
         scanf("%d",&c1);
-        m1 = create_matrix(r1,c1);
-        m2 = create_matrix(r1,c1);
+        create_matrix(r1,c1,&m1);
+        create_matrix(r1,c1,&m2);
         printf("solution matrix :  \n");
-        solve = matrix_differnce(m1,m2);
+        matrix_differnce(m1,m2,&solve);
         print_matrix(solve);
 }
 void do_multiply(){
@@ -51,14 +50,14 @@ void do_multiply(){
         scanf("%d",&r1);
         printf("enter the number if coloumn for matrix1 :  ");
         scanf("%d",&c1);
-        m1 = create_matrix(r1,c1);
+        create_matrix(r1,c1,&m1);
         printf("Declare the matrix2 \n enter the number of rows for matrix2  :  ");
         scanf("%d",&r2);
         printf("enter the number if coloumn for matrix2 :  ");
         scanf("%d",&c2);
        
-        m2 = create_matrix(r2,c2);
-        solve = matrix_multi(m1,m2);
+        create_matrix(r2,c2,&m2);
+        matrix_multi(m1,m2,&solve);
         printf("solution matrix :  \n");
         print_matrix(solve);
 }
@@ -73,8 +72,8 @@ void do_transpose(){
         scanf("%d",&r1);
         printf("enter the number if coloumn :  ");
         scanf("%d",&c1);
-        m1 = create_matrix(r1,c1);
-        solve = Transpose(m1);
+        create_matrix(r1,c1 ,&m1);
+        Transpose(m1,&solve);
         printf("transposed matrix :  \n");
         print_matrix(solve);
 }

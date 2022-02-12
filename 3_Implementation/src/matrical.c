@@ -9,36 +9,57 @@
  * 
  */
 #include<stdio.h>
+#include<stdlib.h>
 #include"matrical.h"
+
+int arr[100];
+int *to_array(struct matrix m1 ){
+    int *arr;
+arr = (int*)malloc(m1.row*m1.col*sizeof(int));
+int idx =0;
+for(int i =0 ;i <m1.row ; i++){
+    for (int j = 0; j < m1.col; j++)
+    {
+        arr[idx] = m1.mat[i][j];
+        ++idx;
+    }
+    
+}
+return arr;
+
+}
 
 // creating a matrix
 
-struct matrix create_matrix(int r, int c){
+int *create_matrix(int r, int c , struct matrix *mat){
     //printf("calling create method");
-    struct matrix mat;
-    mat.row = r;
-    mat.col = c ;
+    mat->row = r;
+    mat->col = c ;
     for (int i =0 ; i <r ; i++){
         for(int j = 0; j <c; j++){
-            scanf("%d",&mat.mat[i][j]);
+            scanf("%d",&mat->mat[i][j]);
         }
 
     }
-    printf("\n");
-    return mat ; 
+    
+    int *arr;
+
+    arr = to_array(*mat);
+    return arr ; 
 }
 
 // transpose of a matrix 
-struct matrix Transpose(struct matrix in_mat){
-    struct matrix out_mat;
-    out_mat.row = in_mat.col;
-    out_mat.col = in_mat.row;
-    for (int i =0 ; i < out_mat.row ; i++){
-        for(int j =0 ; j < out_mat.col ;j++){
-            out_mat.mat[i][j] = in_mat.mat[j][i];
+int *Transpose(struct matrix in_mat , struct matrix *out_mat){
+    out_mat->row = in_mat.col;
+    out_mat->col = in_mat.row;
+    for (int i =0 ; i < out_mat->row; i++){
+        for(int j =0 ; j < out_mat->col ;j++){
+            out_mat->mat[i][j] = in_mat.mat[j][i];
         }
     } 
-    return out_mat;
+    int *arr;
+    arr = to_array(*out_mat);
+    return arr ;
 }
 
 // printing the matrix
@@ -49,63 +70,68 @@ int print_matrix(struct matrix in_matrix){
         }
         printf("\n");
     }
-    printf("\n");
     return 0 ;
 }
 
 // sum of a matrix
-struct matrix matrix_sum( struct matrix m1 , struct matrix m2){
-    struct matrix result ;
-    result.row = 0 ;
-    result.col = 0 ; 
-    if(m1.row != m2.row || m1.col !=m2.col)return result; //  here i need to think a logic so that i can handle the exception.
+int *matrix_sum( struct matrix m1 , struct matrix m2, struct matrix *result){
+    result->row = 0 ;
+    result->col = 0 ; 
+    if(m1.row != m2.row || m1.col !=m2.col)return *result->mat; //  here i need to think a logic so that i can handle the exception.
     else 
     {
-        result.row = m1.row;
-        result.col = m2.col;    
+        result->row = m1.row;
+        result->col = m2.col;    
         for (int i =0 ; i < m1.row ; i++){
             for(int j = 0; j < m1.col ; j++){
-                result.mat[i][j] = m1.mat[i][j] + m2.mat[i][j];
+                result->mat[i][j] = m1.mat[i][j] + m2.mat[i][j];
         }
     }
     }
-    return result ;
+int *arr;
+
+    arr = to_array(*result);
+    return arr ;
 }
 
 // matrix difference
-struct matrix matrix_differnce( struct matrix m1 , struct matrix m2){
-    struct matrix result ;
-    result.row = 0 ;
-    result.col = 0 ; 
-    if(m1.row != m2.row || m1.col !=m2.col)return result;// here again i need to handle the exception
+int *matrix_differnce( struct matrix m1 , struct matrix m2, struct matrix *result){
+    
+    result->row = 0 ;
+    result->col = 0 ; 
+    if(m1.row != m2.row || m1.col !=m2.col)return *result->mat; //  here i need to think a logic so that i can handle the exception.
     else 
     {
-        result.row = m1.row;
-        result.col = m2.col;    
+        result->row = m1.row;
+        result->col = m2.col;    
         for (int i =0 ; i < m1.row ; i++){
             for(int j = 0; j < m1.col ; j++){
-                result.mat[i][j] = m1.mat[i][j] - m2.mat[i][j];
+                result->mat[i][j] = m1.mat[i][j] - m2.mat[i][j];
         }
     }
     }
-    return result ;
+    int *arr ;
+    arr = to_array(*result) ;
+    return arr ;
 }
 // multiply the matrix
-struct matrix matrix_multi (struct matrix m1 , struct matrix m2){
-    struct matrix result ;
-    result.row = m1.row;
-    result.col = m2.col;
+int *matrix_multi (struct matrix m1 , struct matrix m2 , struct matrix* result){
+
+    result->row = m1.row;
+    result->col = m2.col;
 
 
-    for (int i = 0; i < result.row; i++){
-        for(int j = 0 ; j < result.col ; j++){
-            result.mat[i][j] =0 ; 
+    for (int i = 0; i < result->row; i++){
+        for(int j = 0 ; j < result->col ; j++){
+            result->mat[i][j] =0 ; 
             for(int k =0 ; k < m2.row ; k++){
-                result.mat[i][j] += m1.mat[i][k]*m2.mat[k][j];
+                result->mat[i][j] += m1.mat[i][k]*m2.mat[k][j];
             }
         }
     }
-    return result ;
+    int *arr ;
+    arr = to_array(*result) ;
+    return arr ;
 }
 
 //finding the det of the matrix
