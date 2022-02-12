@@ -5,7 +5,6 @@
 
 int r1,r2,c1,c2; 
 struct matrix m1 ,m2 ,solve;
-int arr[100];
 
 void main_menu (){
     system("clear||cls");
