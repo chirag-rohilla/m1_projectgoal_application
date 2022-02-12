@@ -80,33 +80,25 @@ void do_transpose(){
 }
 
 int main(){
-char c = 'y' ;
-
-        
+char c = 'y' ;        
 while(c == 'y' || c == 'Y'){
     main_menu();
     int choice ;
-    
     scanf("%d",&choice);
     switch(choice)
     {
         case 1 :
         do_transpose();
         break;
-
         case 2 :
         do_sum();
         break;
-
-
         case 3 :
         do_diff();
         break ;
-
         case 4:
         do_multiply();
         break;
-
         case 5 :
         do_det();
         break;
@@ -115,11 +107,9 @@ while(c == 'y' || c == 'Y'){
         default :
         printf(" INVALID INPUT !!!");
         break;
-    };
-    
+    };  
 printf("RETURN TO THE MAIN MENU (Y/N)    ");
 scanf("%s",&c); 
-    
 }                                  
     return 0 ;
 }
