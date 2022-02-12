@@ -111,13 +111,14 @@ struct matrix matrix_multi (struct matrix m1 , struct matrix m2){
 //finding the det of the matrix
 int det_of_matrix(struct matrix m1)
 {
-    int ratio;
+    
     if(m1.row== m1.col)
     {
         for(int i = 0; i < m1.row; i++)
         {
             for(int j = 0; j < m1.row; j++)
-            {
+            { 
+                int ratio= 0;
                 if(j>i){
                     ratio = m1.mat[j][i]/m1.mat[i][i];
                     for(int k = 0; k < m1.row ; k++){
