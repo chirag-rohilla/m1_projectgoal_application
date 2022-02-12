@@ -36,6 +36,7 @@ Matrix calculus generalizes classical analytical notions such as derivatives and
 # SWOT
 ![swot](https://github.com/chirag-rohilla/m1_projectgoal_application/blob/main/6_images/swot.png)
 
+
 # Output
 
 ![1](https://github.com/chirag-rohilla/m1_projectgoal_application/blob/main/6_images/1.png)
