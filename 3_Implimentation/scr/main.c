@@ -4,6 +4,9 @@
 #include<conio.h>
 #include<stdlib.h>
 
+int r1,r2,c1,c2; 
+struct matrix m1 ,m2 ,solve;
+
 void main_menu (){
     system("clear||cls");
     printf("                        MATRIX CALCLUTOR                     \n");
@@ -15,34 +18,8 @@ void main_menu (){
     printf(" 6 : EXIT                                                    \n\n\n");
     printf(" ENTER YOUR CHOICE :");
 }
-
-int main(){
-char c = 'y' ;
-int r1,r2,c1,c2; 
-struct matrix m1 ,m2 ,solve;
-        
-while(c == 'y' || c == 'Y'){
-    main_menu();
-    int choice ;
-    
-    scanf("%d",&choice);
-    switch(choice)
-    {
-        case 1 :
-        system("clear || cls" );
-        
-        printf("Declare the matrix \n enter the number of rows   :  ");
-        scanf("%d",&r1);
-        printf("enter the number if coloumn :  ");
-        scanf("%d",&c1);
-        m1 = create_matrix(r1,c1);
-        solve = Transpose(m1);
-        printf("transposed matrix :  \n");
-        print_matrix(solve);
-        break;
-
-        case 2 :
-        system("clear || cls" );
+void do_sum (){
+   system("clear || cls" );
         
         printf("Declare the matrix \n enter the number of rows   :  ");
         scanf("%d",&r1);
@@ -53,11 +30,9 @@ while(c == 'y' || c == 'Y'){
         solve = matrix_sum(m1,m2);
         printf("solution matrix :  \n");
         print_matrix(solve);
-        break;
-
-
-        case 3 :
-        system("clear || cls" );
+}
+void do_diff(){
+     system("clear || cls" );
 
         printf("Declare the matrix \n enter the number of rows   :  ");
         scanf("%d",&r1);
@@ -68,10 +43,9 @@ while(c == 'y' || c == 'Y'){
         printf("solution matrix :  \n");
         solve = matrix_differnce(m1,m2);
         print_matrix(solve);
-        break ;
-
-        case 4:
-        system("clear || cls" );
+}
+void do_multiply(){
+      system("clear || cls" );
         
         printf("Declare the matrix \n enter the number of rows for matrix1  :  ");
         scanf("%d",&r1);
@@ -87,11 +61,54 @@ while(c == 'y' || c == 'Y'){
         solve = matrix_multi(m1,m2);
         printf("solution matrix :  \n");
         print_matrix(solve);
+}
+void do_det(){
+    system("clear || cls" );
+        printf("service not avialable yet ");
+}
+void do_transpose(){
+      system("clear || cls" );
+        
+        printf("Declare the matrix \n enter the number of rows   :  ");
+        scanf("%d",&r1);
+        printf("enter the number if coloumn :  ");
+        scanf("%d",&c1);
+        m1 = create_matrix(r1,c1);
+        solve = Transpose(m1);
+        printf("transposed matrix :  \n");
+        print_matrix(solve);
+}
+
+int main(){
+char c = 'y' ;
+
+        
+while(c == 'y' || c == 'Y'){
+    main_menu();
+    int choice ;
+    
+    scanf("%d",&choice);
+    switch(choice)
+    {
+        case 1 :
+        do_transpose();
+        break;
+
+        case 2 :
+        do_sum();
+        break;
+
+
+        case 3 :
+        do_diff();
+        break ;
+
+        case 4:
+        do_multiply();
         break;
 
         case 5 :
-        system("clear || cls" );
-        printf("service not avialable yet ");
+        do_det();
         break;
         case 6:
         exit(0);
