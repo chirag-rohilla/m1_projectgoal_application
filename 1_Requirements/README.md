@@ -1,6 +1,6 @@
 # Discription
 ##  matrix calculator
-this matrix calculator is a project that does arithematic calculation
+Matrix Calculator is an tool that helps to perform different matrix operations on 2 x 2 matrices i.e. matrix addition, matrix subtraction, and matrix multiplication. A matrix that has the same number of rows and columns is known as a square matrix. To use this Matrix calculator, enter the numbers in the input box.
 # Requirements
 ## Highlevel requirements
 |  ID  |             Discription           |    status   |
